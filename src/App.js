@@ -1,12 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react'
 
 function App() {
+  const [isVisible, setVisibility] = useState(true)
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <img style={{display: isVisible ? 'block' : 'none'}} src={logo} className="App-logo" alt="logo" />
+        <p onClick={()=>{setVisibility(!isVisible)}}>
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
